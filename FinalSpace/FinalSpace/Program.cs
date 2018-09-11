@@ -38,8 +38,7 @@ namespace FinalSpace
 
         static void Main(string[] args)
         {
-            int a = 0xb0;
-            Console.WriteLine(a);
+            Console.Title = "FINAL SPACE DEBUGGER";
             Setup();
             GameLoop();
 

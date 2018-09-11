@@ -38,6 +38,7 @@ namespace FinalSpace.Game
         public abstract void Update(Time time);
         public abstract void FixedUpdate(Time time);
         public abstract void Render(ref DrawQueue queueOut);
+        public virtual void SendLine(string s) { }
 
         // Input
         public abstract void KeyUp(object sender, KeyEventArgs e);

@@ -55,9 +55,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\CameraView.cs" />
+    <Compile Include="Core\Parsing\CommandBase.cs" />
+    <Compile Include="Core\Parsing\Commands\Error.cs" />
+    <Compile Include="Core\Parsing\Commands\Warp.cs" />
+    <Compile Include="Core\Parsing\Commands\Help.cs" />
+    <Compile Include="Core\Parsing\Commands\Clear.cs" />
+    <Compile Include="Core\Parsing\Parser.cs" />
     <Compile Include="Game\Gameplay\Characters\Citizen.cs" />
     <Compile Include="Game\Gameplay\Characters\Leader.cs" />
-    <Compile Include="Game\Gameplay\Console\CommandBase.cs" />
+    <Compile Include="Game\Gameplay\Player.cs" />
     <Compile Include="Game\Gameplay\Skills.cs" />
     <Compile Include="Game\Gameplay\Stars\Earth.cs" />
     <Compile Include="Game\Gameplay\Stars\Planet.cs" />
@@ -66,10 +72,8 @@
     <Compile Include="Game\SpaceShip.cs" />
     <Compile Include="Game\StateBase.cs" />
     <Compile Include="Graphics\PostProcessing.cs" />
-    <Compile Include="GUI\GUIConsole.cs" />
     <Compile Include="GUI\GUIElement.cs" />
     <Compile Include="GUI\TextBox.cs" />
-    <Compile Include="GUI\TextBuffer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendering\DrawQueue.cs" />

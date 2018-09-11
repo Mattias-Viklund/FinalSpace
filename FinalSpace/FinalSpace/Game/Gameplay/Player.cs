@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinalSpace.Game.Gameplay.Console
+namespace FinalSpace.Game.Gameplay
 {
-    abstract class CommandBase
+    class Player
     {
+        
+
     }
 }
