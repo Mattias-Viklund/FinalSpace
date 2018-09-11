@@ -13,6 +13,7 @@ namespace FinalSpace.Game.Gameplay.Stars
         public Earth(Texture texture, float size, Vector2f globalPosition)
             : base(texture, size, globalPosition)
         {
+            base.SetName("EARTH");
 
         }
     }

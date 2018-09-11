@@ -16,6 +16,7 @@ namespace FinalSpace.Game
     class GameState : StateBase
     {
         private RectangleShape background = new RectangleShape((Vector2f)Program._window.Size);
+
         private Texture planetTexture = new Texture(".\\Assets\\Planet.png");
         private DrawQueue queue = new DrawQueue(256);
 
@@ -47,6 +48,11 @@ namespace FinalSpace.Game
         {
             return textbox;
 
+        }
+
+        public SpaceShip GetShip()
+        {
+            return ship;
         }
 
         public void ChangePlanetTexture(string path)

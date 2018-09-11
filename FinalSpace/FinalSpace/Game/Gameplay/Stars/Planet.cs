@@ -16,6 +16,10 @@ namespace FinalSpace.Game.Gameplay.Stars
         private CircleShape orbit;
         private float hexagonSize;
         private float orbitSize;
+        private Vertex[] lines;
+        private Text text;
+
+        
 
         public Planet(Texture texture, float size, Vector2f globalPosition)
         {
@@ -28,6 +32,17 @@ namespace FinalSpace.Game.Gameplay.Stars
             orbit.FillColor = Color.Transparent;
             orbit.OutlineColor = Color.White;
             orbit.OutlineThickness = 1.0f;
+            lines = new Vertex[2];
+            lines[0] = new Vertex(globalPosition);
+            lines[1] = new Vertex(new Vector2f(globalPosition.X, globalPosition.Y-size*2));
+            text = new Text("Planet: ", Program.gameFont, 20);
+            text.Position = new Vector2f(globalPosition.X-3, globalPosition.Y - size * 2 - 20);
+
+        }
+
+        public void SetName(string s)
+        {
+            text.DisplayedString = "Planet: "+s;
 
         }
 
@@ -64,7 +79,8 @@ namespace FinalSpace.Game.Gameplay.Stars
             if (target is RenderWindow)
             {
                 (target as RenderWindow).Draw(hexagon);
-                //(target as RenderWindow).Draw(orbit);
+                (target as RenderWindow).Draw(lines, PrimitiveType.Lines);
+                (target as RenderWindow).Draw(text);
 
                 if (Program._debug)
                 {

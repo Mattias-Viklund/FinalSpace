@@ -11,19 +11,25 @@ namespace FinalSpace.Core.Parsing.Commands
     {
         public override void Execute(GameState stateBase, string[] arguments)
         {
-            stateBase.GetTextBox().PushString("help 'command'\nTo display help for a command do:");
-            
+            if (arguments.Length < 2)
+                stateBase.GetTextBox().PushString("WARP NEAREST, WARP 'PLANET', WARP HOME. \nIncorrect Syntax, Correct usage:");
+            else
+            {
+                stateBase.GetTextBox().PushString("WARP");
+                stateBase.GetShip().Warp();
+
+            }
         }
 
         public override int GetArguments()
         {
-            return 2;
+            return 1;
 
         }
 
         public override string GetKey()
         {
-            return "HELP";
+            return "WARP";
 
         }
     }
