@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 using SFML.Graphics;
 using SFML.Window;
@@ -16,12 +17,21 @@ namespace FinalSpace
 {
     class Program
     {
+        //[DllImport("kernel32.dll")]
+        //static extern IntPtr GetConsoleWindow();
+
+        //[DllImport("user32.dll")]
+        //static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        //const int SW_HIDE = 0;
+        //const int SW_SHOW = 5;
+
         public static bool _debug = false;
 
         const int width = 1280;
         const int height = 720;
 
-        public static RenderWindow _window = new RenderWindow(new VideoMode((uint)width, (uint)height), "LAST SPACE", Styles.Close);
+        public static RenderWindow _window = new RenderWindow(new VideoMode((uint)width, (uint)height), "FINAL SPACE", Styles.Close);
         public static Font gameFont = new Font(".\\Assets\\LucidaConsole.ttf");
 
         // Ticks Per Second
@@ -38,9 +48,17 @@ namespace FinalSpace
 
         static void Main(string[] args)
         {
-            Console.Title = "FINAL SPACE DEBUGGER";
+            //Console.Title = "FINAL SPACE DEBUGGER";
+            SetIcon("icon.png");
             Setup();
             GameLoop();
+
+        }
+
+        static void SetIcon(string path)
+        {
+            Image img = new Image(path);
+            _window.SetIcon(img.Size.X, img.Size.Y, img.Pixels);
 
         }
 
@@ -53,6 +71,8 @@ namespace FinalSpace
             _window.MouseButtonPressed += new EventHandler<MouseButtonEventArgs>(MouseDown);
             _window.MouseButtonReleased += new EventHandler<MouseButtonEventArgs>(MouseUp);
             _window.MouseMoved += new EventHandler<MouseMoveEventArgs>(MouseMoved);
+
+            //ShowWindow(GetConsoleWindow(), SW_HIDE);
 
         }
 

@@ -19,8 +19,6 @@ namespace FinalSpace.Game.Gameplay.Stars
         private Vertex[] lines;
         private Text text;
 
-        
-
         public Planet(Texture texture, float size, Vector2f globalPosition)
         {
             this.hexagonSize = size;

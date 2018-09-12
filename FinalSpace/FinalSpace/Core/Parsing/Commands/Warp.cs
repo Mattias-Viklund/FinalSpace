@@ -15,9 +15,17 @@ namespace FinalSpace.Core.Parsing.Commands
                 stateBase.GetTextBox().PushString("WARP NEAREST, WARP 'PLANET', WARP HOME. \nIncorrect Syntax, Correct usage:");
             else
             {
-                stateBase.GetTextBox().PushString("WARP");
-                stateBase.GetShip().Warp();
+                if (!stateBase.GetShip().warping)
+                {
+                    stateBase.GetTextBox().PushString("WARP " + arguments[1]);
+                    stateBase.GetShip().Warp();
 
+                }
+                else
+                {
+                    stateBase.GetTextBox().PushString("WARP " + arguments[1] + ", Already Warping." + "\nUnable to do:");
+
+                }
             }
         }
 

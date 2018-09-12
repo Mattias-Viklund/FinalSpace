@@ -44,7 +44,7 @@ namespace FinalSpace.Game
         private float warpTime = 2; // IN SECONDS
         private float fadePerSec; // SET IN WARP()
         private float warpAlpha = 0;
-        private bool warping = false;
+        public bool warping = false;
         private bool reverse = false;
 
         public SpaceShip(Vector2f position, Color color)

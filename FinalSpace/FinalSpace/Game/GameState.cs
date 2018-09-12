@@ -88,7 +88,7 @@ namespace FinalSpace.Game
 
         public override void SendLine(string s)
         {
-            Console.WriteLine(s);
+            //Console.WriteLine(s);
             parser.Parse(s);
 
         }

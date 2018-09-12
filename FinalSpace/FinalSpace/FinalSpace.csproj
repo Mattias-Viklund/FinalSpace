@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{12DFDF95-D7F7-485C-A9B4-710EB69F7EFA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>FinalSpace</RootNamespace>
     <AssemblyName>FinalSpace</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="sfmlnet-audio-2">
       <HintPath>..\Dependencies\SFML\lib\sfmlnet-audio-2.dll</HintPath>
@@ -46,6 +49,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +83,7 @@
     <Compile Include="Rendering\DrawQueue.cs" />
     <Compile Include="Game\Gameplay\Star.cs" />
     <Compile Include="Rendering\Hexagon.cs" />
+    <Compile Include="Util\ImageToArray.cs" />
     <Compile Include="World\WorldGen\Generation.cs" />
     <Compile Include="World\WorldGen\Level.cs" />
     <Compile Include="World\WorldGen\Loading.cs" />
@@ -91,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Planet.png">
