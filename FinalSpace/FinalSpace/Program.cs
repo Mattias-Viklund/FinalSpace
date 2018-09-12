@@ -49,7 +49,7 @@ namespace FinalSpace
         static void Main(string[] args)
         {
             //Console.Title = "FINAL SPACE DEBUGGER";
-            SetIcon("icon.png");
+            SetIcon(".\\Assets\\icon.png");
             Setup();
             GameLoop();
 
