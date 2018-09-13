@@ -40,5 +40,11 @@ namespace FinalSpace.Core.Parsing.Commands
             return "WARP";
 
         }
+
+        public override string HelpMessage()
+        {
+            return "Usage: WARP <LOCATION>\nWarps spaceship to specified <LOCATION>.";
+
+        }
     }
 }

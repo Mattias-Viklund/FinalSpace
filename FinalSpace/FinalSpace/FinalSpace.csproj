@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Core\CameraView.cs" />
     <Compile Include="Core\Parsing\CommandBase.cs" />
+    <Compile Include="Core\Parsing\Commands\Echo.cs" />
     <Compile Include="Core\Parsing\Commands\Error.cs" />
     <Compile Include="Core\Parsing\Commands\Warp.cs" />
     <Compile Include="Core\Parsing\Commands\Help.cs" />

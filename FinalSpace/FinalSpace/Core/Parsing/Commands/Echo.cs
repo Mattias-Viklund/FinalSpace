@@ -7,12 +7,16 @@ using FinalSpace.Game;
 
 namespace FinalSpace.Core.Parsing.Commands
 {
-    class Clear : CommandBase
+    class Echo : CommandBase
     {
         public override void Execute(GameState stateBase, string[] arguments)
         {
-            stateBase.GetTextBox().ClearBuffer();
-            
+            string s = "";
+            for (int i = 1; i < arguments.Length; i++)
+                s += arguments[i]+" ";
+
+            stateBase.GetTextBox().PushString(s);
+
         }
 
         public override int GetArguments()
@@ -23,14 +27,13 @@ namespace FinalSpace.Core.Parsing.Commands
 
         public override string GetKey()
         {
-            return "CLEAR";
+            return "ECHO";
 
         }
 
         public override string HelpMessage()
         {
-            return "Usage: CLEAR\nClears all messages from buffer.";
-
+            return "Usage: ECHO <MESSAGE>\nPrints <MESSAGE> to buffer";
         }
     }
 }

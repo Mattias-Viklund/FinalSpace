@@ -44,5 +44,11 @@ namespace FinalSpace.Core.Parsing.Commands
             return "";
 
         }
+
+        public override string HelpMessage()
+        {
+            return "You are not supposed to be here.";
+
+        }
     }
 }

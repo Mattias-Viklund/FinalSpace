@@ -10,7 +10,7 @@ namespace FinalSpace.Core.Parsing
 {
     class Parser
     {
-        public List<CommandBase> commands;
+        public static List<CommandBase> commands;
 
         private GameState gameState;
 
@@ -20,6 +20,19 @@ namespace FinalSpace.Core.Parsing
 
             commands = CommandBase.GetCommands();
             this.gameState = gameState;
+
+        }
+
+        public static CommandBase TryFindCommand(string key)
+        {
+            foreach (CommandBase b in commands)
+            {
+                if (b.GetKey() == key)
+                    return b;
+
+            }
+
+            return null;
 
         }
 

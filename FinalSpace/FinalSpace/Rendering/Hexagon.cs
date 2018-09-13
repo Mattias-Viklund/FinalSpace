@@ -31,7 +31,7 @@ namespace FinalSpace.Rendering
             }
         }
 
-        private Vector2f Pivot(Vector2f center, float angleDeg, float size)
+        public Vector2f Pivot(Vector2f center, float angleDeg, float size)
         {
             float angleRad = (float)Math.PI / 180 * angleDeg;
             return new Vector2f(center.X + size * (float)Math.Cos(angleRad), center.Y + size * (float)Math.Sin(angleRad));

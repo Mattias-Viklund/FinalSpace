@@ -46,6 +46,7 @@ namespace FinalSpace.Core.Parsing
         public abstract void Execute(GameState stateBase, string[] arguments);
         public abstract string GetKey();
         public abstract int GetArguments();
+        public abstract string HelpMessage();
 
     }
 }
