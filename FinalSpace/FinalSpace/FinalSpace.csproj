@@ -87,6 +87,8 @@
     <Compile Include="Game\Gameplay\Skills.cs" />
     <Compile Include="Game\Gameplay\Stars\Earth.cs" />
     <Compile Include="Game\Gameplay\GameplayBases\Planet.cs" />
+    <Compile Include="Game\Gameplay\Stars\InhabitablePlanet.cs" />
+    <Compile Include="Game\Gameplay\Stars\WastelandPlanet.cs" />
     <Compile Include="Game\GameState.cs" />
     <Compile Include="Game\MenuState.cs" />
     <Compile Include="Game\SpaceShip.cs" />
