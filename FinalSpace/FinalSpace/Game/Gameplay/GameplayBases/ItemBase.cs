@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinalSpace.Game.Gameplay
+namespace FinalSpace.Game.Gameplay.GameplayBases
 {
     abstract class ItemBase
     {

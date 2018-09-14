@@ -63,24 +63,30 @@
   <ItemGroup>
     <Compile Include="Core\CameraView.cs" />
     <Compile Include="Core\Parsing\CommandBase.cs" />
+    <Compile Include="Core\Parsing\Commands\Communication\Alliance.cs" />
+    <Compile Include="Core\Parsing\Commands\Communication\Communicate.cs" />
+    <Compile Include="Core\Parsing\Commands\Communication\Say.cs" />
+    <Compile Include="Core\Parsing\Commands\Communication\Trade.cs" />
     <Compile Include="Core\Parsing\Commands\Echo.cs" />
     <Compile Include="Core\Parsing\Commands\Error.cs" />
+    <Compile Include="Core\Parsing\Commands\Balance.cs" />
+    <Compile Include="Core\Parsing\Commands\Money.cs" />
     <Compile Include="Core\Parsing\Commands\Planet.cs" />
+    <Compile Include="Core\Parsing\Commands\Quests.cs" />
     <Compile Include="Core\Parsing\Commands\Warp.cs" />
     <Compile Include="Core\Parsing\Commands\Help.cs" />
     <Compile Include="Core\Parsing\Commands\Clear.cs" />
     <Compile Include="Core\Parsing\Parser.cs" />
-    <Compile Include="Game\Gameplay\Characters\Citizen.cs" />
     <Compile Include="Game\Gameplay\Characters\Leader.cs" />
     <Compile Include="Game\Gameplay\Inventory.cs" />
-    <Compile Include="Game\Gameplay\ItemBase.cs" />
+    <Compile Include="Game\Gameplay\GameplayBases\ItemBase.cs" />
     <Compile Include="Game\Gameplay\ItemStack.cs" />
     <Compile Include="Game\Gameplay\Items\EMPTY.cs" />
     <Compile Include="Game\Gameplay\Items\Test.cs" />
     <Compile Include="Game\Gameplay\Player.cs" />
     <Compile Include="Game\Gameplay\Skills.cs" />
     <Compile Include="Game\Gameplay\Stars\Earth.cs" />
-    <Compile Include="Game\Gameplay\Stars\Planet.cs" />
+    <Compile Include="Game\Gameplay\GameplayBases\Planet.cs" />
     <Compile Include="Game\GameState.cs" />
     <Compile Include="Game\MenuState.cs" />
     <Compile Include="Game\SpaceShip.cs" />
@@ -91,12 +97,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendering\DrawQueue.cs" />
-    <Compile Include="Game\Gameplay\Star.cs" />
     <Compile Include="Rendering\Hexagon.cs" />
     <Compile Include="Util\ImageToArray.cs" />
     <Compile Include="World\WorldGen\Generation.cs" />
     <Compile Include="World\WorldGen\Level.cs" />
     <Compile Include="World\WorldGen\Loading.cs" />
+    <Compile Include="World\WorldSpace.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -130,6 +136,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Game\Gameplay\Relations\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

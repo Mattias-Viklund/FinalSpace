@@ -7,10 +7,11 @@ using SFML.Graphics;
 using SFML.System;
 using FinalSpace.Rendering;
 
-namespace FinalSpace.Game.Gameplay.Stars
+namespace FinalSpace.Game.Gameplay.GameplayBases
 {
     abstract class Planet : Drawable
     {
+        // WHELP
         private Texture texture;
         private Hexagon hexagon;
         private CircleShape orbit;
@@ -19,6 +20,27 @@ namespace FinalSpace.Game.Gameplay.Stars
         private Vertex[] linesFromCenter;
         private Vertex[] lines;
         private Text text;
+        private string planetName;
+
+        // Friendlyness = 0-99 (50 normal)
+        // Friendfactor = -(Friendlyness / 100)
+        // Wealth { Rich, Wealthy, Normal, Poor, Primitive, None }
+        // Valuables = Item * friendFactor
+        // WillBuy = Item
+
+        public int friendlyNess = 50;
+        public int friendFactor = 1;
+
+        public enum Wealth
+        {
+            Rich,
+            Wealthy,
+            Fine,
+            Poor,
+            Primitive,
+            Wasteland
+
+        }
 
         public Planet(Texture texture, float size, Vector2f globalPosition)
         {
@@ -35,7 +57,7 @@ namespace FinalSpace.Game.Gameplay.Stars
             linesFromCenter = new Vertex[2];
             linesFromCenter[0] = new Vertex(globalPosition);
             linesFromCenter[1] = new Vertex(hexagon.Pivot(new Vector2f(globalPosition.X, globalPosition.Y), -60, size * 2));
-            text = new Text("Planet: ", Program.gameFont, 20);
+            text = new Text("PLANET: ", Program.gameFont, 20);
             text.Position = new Vector2f(linesFromCenter[1].Position.X, linesFromCenter[1].Position.Y - 25);
             lines[0] = linesFromCenter[1];
             lines[1] = linesFromCenter[1];
@@ -44,7 +66,8 @@ namespace FinalSpace.Game.Gameplay.Stars
 
         public void SetName(string s)
         {
-            text.DisplayedString = "Planet: "+s;
+            this.planetName = s;
+            text.DisplayedString = "PLANET: "+s;
             lines[1] = new Vertex(new Vector2f(linesFromCenter[1].Position.X+31*s.Length, linesFromCenter[1].Position.Y));
 
         }
@@ -67,15 +90,11 @@ namespace FinalSpace.Game.Gameplay.Stars
 
         }
 
-        //string[] names = { "EARTH", "MARS", "TERRA", "VALLES", "MONTES", "COLLES", "FARRA", "THOLI",
-        //                     "PALUDES", "DORSA", "RIMAE", "CATANAE", "MACUL","FRETA","UNDAE","OBEROM","", };
-        //public static string GetRandomName()
-        //{
-        //    Random rng = new Random();
+        public string GetName()
+        {
+            return planetName;
 
-
-
-        //}
+        }
 
         public void Draw(RenderTarget target, RenderStates states)
         {

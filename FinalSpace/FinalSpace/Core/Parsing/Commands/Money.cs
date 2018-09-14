@@ -7,30 +7,26 @@ using FinalSpace.Game;
 
 namespace FinalSpace.Core.Parsing.Commands
 {
-    class Planet : CommandBase
+    class Money : CommandBase
     {
         public override void Execute(GameState stateBase, string[] arguments)
         {
-            stateBase.GetTextBox().PushString("Your spaceship is currently orbiting "+stateBase.GetPlayer().GetCurrentPlanet().GetName());
-
+            stateBase.GetTextBox().PushString("Balance: "+stateBase.GetPlayer().money.ToString());
         }
 
         public override int GetArguments()
         {
             return 1;
-
         }
 
         public override string GetKey()
         {
-            return "PLANET";
-
+            return "MONEY";
         }
 
         public override string HelpMessage()
         {
-            return "Usage: Planet\nGets NAME of current planet.";
-            
+            return "Displays current amount of money";
         }
     }
 }

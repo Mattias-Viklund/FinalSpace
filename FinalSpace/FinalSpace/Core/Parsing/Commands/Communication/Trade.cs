@@ -5,32 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using FinalSpace.Game;
 
-namespace FinalSpace.Core.Parsing.Commands
+namespace FinalSpace.Core.Parsing.Commands.Communication
 {
-    class Planet : CommandBase
+    class Trade : CommandBase
     {
         public override void Execute(GameState stateBase, string[] arguments)
         {
-            stateBase.GetTextBox().PushString("Your spaceship is currently orbiting "+stateBase.GetPlayer().GetCurrentPlanet().GetName());
-
         }
 
         public override int GetArguments()
         {
             return 1;
-
         }
 
         public override string GetKey()
         {
-            return "PLANET";
-
+            return "TRADE";
         }
 
         public override string HelpMessage()
         {
-            return "Usage: Planet\nGets NAME of current planet.";
-            
+            return "Usage: TRADE\nBuy or Sell items to planet you are orbiting.";
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalSpace.Game.Gameplay.GameplayBases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,28 +9,38 @@ namespace FinalSpace.Game.Gameplay
 {
     class Inventory
     {
-        private List<ItemBase> items;
+        private List<ItemStack> slots;
         private int inventorySize;
 
         public Inventory(int inventorySize)
         {
             this.inventorySize = inventorySize;
 
-            items = new List<ItemBase>();
+            slots = new List<ItemStack>();
 
         }
 
-        public bool TryAddItem(ItemBase item)
+        public bool TryAddItem(ItemBase item, int count)
         {
-            if (items.Count < inventorySize)
+            foreach (ItemStack stack in slots)
             {
-                items.Add(item);
-                return true;
+                if (stack.item.itemID == item.itemID)
+                {
+                    stack.count += count;
+                    if (stack.count > stack.item.GetMaxStack())
+                    {
+                        stack.count -= count;
+                        return false;
+
+                    }
+                    else
+                    return true;
+
+                }
 
             }
-            else
-                return false;
 
+            return true;
         }
 
         public void RemoveItem(int index)
@@ -40,9 +51,9 @@ namespace FinalSpace.Game.Gameplay
 
         public int TryFindItem(int ID)
         {
-            for (int i = 0; i < items.Count; i++)
+            for (int i = 0; i < slots.Count; i++)
             {
-                if (items[i].itemID == ID)
+                if (slots[i].item.itemID == ID)
                     return i;
 
             }

@@ -11,6 +11,7 @@ using FinalSpace.Game.Gameplay.Stars;
 using FinalSpace.GUI;
 using FinalSpace.Core.Parsing;
 using FinalSpace.Game.Gameplay;
+using FinalSpace.Game.Gameplay.GameplayBases;
 
 namespace FinalSpace.Game
 {
@@ -41,14 +42,20 @@ namespace FinalSpace.Game
             ship.Scale(new Vector2f(0.25f, 0.25f));
             background.FillColor = Color.White;
 
-            textbox = new TextBox(new Vector2f(Program._window.Size.X, 180), new Vector2f(0, Program._window.Size.Y-180), 50, 20, Color.Black, Color.White, this);
+            textbox = new TextBox(new Vector2f(Program._window.Size.X, 180), new Vector2f(0, Program._window.Size.Y-180), 50, 20, new Color(0, 0, 0, 127), Color.White, this);
             textbox.SetInputBox(true);
-
+            
             player = new Player("Mew_", planet);
 
             parser = new Parser(this);
 
             shipOrbitPosition = new Vector2f(planet.GetPosition().X + planet.GetOrbitSize() - ship.GetCenter().X / 2, planet.GetPosition().Y + planet.GetOrbitSize() - ship.GetCenter().Y / 2);
+
+        }
+
+        public Player GetPlayer()
+        {
+            return player;
 
         }
 
