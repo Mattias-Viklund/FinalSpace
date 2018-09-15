@@ -11,7 +11,7 @@ using FinalSpace.Game.Gameplay.Stars;
 using FinalSpace.GUI;
 using FinalSpace.Core.Parsing;
 using FinalSpace.Game.Gameplay;
-using FinalSpace.Game.Gameplay.GameplayBases;
+
 
 namespace FinalSpace.Game
 {
@@ -50,6 +50,12 @@ namespace FinalSpace.Game
             parser = new Parser(this);
 
             shipOrbitPosition = new Vector2f(planet.GetPosition().X + planet.GetOrbitSize() - ship.GetCenter().X / 2, planet.GetPosition().Y + planet.GetOrbitSize() - ship.GetCenter().Y / 2);
+
+        }
+
+        public void PushString(string s)
+        {
+            textbox.PushString(s);
 
         }
 

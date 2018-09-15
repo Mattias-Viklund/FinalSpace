@@ -53,6 +53,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Core\CameraView.cs" />
     <Compile Include="Core\Parsing\CommandBase.cs" />
+    <Compile Include="Core\Parsing\Commands\Communication\Read.cs" />
     <Compile Include="Core\Parsing\Commands\Communication\Alliance.cs" />
     <Compile Include="Core\Parsing\Commands\Communication\Communicate.cs" />
     <Compile Include="Core\Parsing\Commands\Communication\Say.cs" />
@@ -78,15 +80,20 @@
     <Compile Include="Core\Parsing\Commands\Clear.cs" />
     <Compile Include="Core\Parsing\Parser.cs" />
     <Compile Include="Game\Gameplay\Characters\Leader.cs" />
+    <Compile Include="Game\Gameplay\Communication\Conversation.cs" />
+    <Compile Include="Game\Gameplay\Communication\Sentence.cs" />
     <Compile Include="Game\Gameplay\Inventory.cs" />
-    <Compile Include="Game\Gameplay\GameplayBases\ItemBase.cs" />
+    <Compile Include="Game\Gameplay\Items\ItemBase.cs" />
     <Compile Include="Game\Gameplay\ItemStack.cs" />
     <Compile Include="Game\Gameplay\Items\EMPTY.cs" />
+    <Compile Include="Game\Gameplay\Items\ItemLoader.cs" />
+    <Compile Include="Game\Gameplay\Items\Spice.cs" />
     <Compile Include="Game\Gameplay\Items\Test.cs" />
     <Compile Include="Game\Gameplay\Player.cs" />
+    <Compile Include="Game\Gameplay\Questing\QuestBase.cs" />
     <Compile Include="Game\Gameplay\Skills.cs" />
     <Compile Include="Game\Gameplay\Stars\Earth.cs" />
-    <Compile Include="Game\Gameplay\GameplayBases\Planet.cs" />
+    <Compile Include="Game\Gameplay\Stars\Planet.cs" />
     <Compile Include="Game\Gameplay\Stars\InhabitablePlanet.cs" />
     <Compile Include="Game\Gameplay\Stars\WastelandPlanet.cs" />
     <Compile Include="Game\GameState.cs" />
@@ -116,10 +123,16 @@
     <Content Include="Assets\Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Dictionary.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Items.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Planet.png">

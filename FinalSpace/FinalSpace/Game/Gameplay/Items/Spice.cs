@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace FinalSpace.Game.Gameplay.Items
 {
-    class Test : ItemBase
+    class Spice : ItemBase
     {
+        private string name;
+        private int value;
+
+        public Spice(string name, int value)
+        {
+            this.name = name;
+            this.value = value;
+
+        }
+
         public override bool CanSell()
         {
             return true;
@@ -16,34 +26,31 @@ namespace FinalSpace.Game.Gameplay.Items
         public override bool CanStack()
         {
             return true;
-
         }
 
         public override int GetMaxStack()
         {
-            return 32;
+            return 64;
         }
 
         public override string GetName()
         {
-            return "TEST";
+            return name;
         }
 
         public override int GetValue()
         {
-            return 1000;
-
+            return value;
         }
 
         public override bool IsConsumable()
         {
-            return true;
-
+            return false;
         }
 
         public override void UseItem(GameState state)
         {
-            state.GetTextBox();
+            state.PushString("Item '"+name+"' is not usable.");
 
         }
     }

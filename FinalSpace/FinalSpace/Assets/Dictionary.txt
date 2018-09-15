@@ -1,0 +1,8 @@
+hello 0
+
+// COMMENTS ARE MADE WITH //
+
+greetings 0
+hi 0
+hey 0
+howdy 0

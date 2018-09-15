@@ -4,39 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FinalSpace.Game;
+using FinalSpace.Game.Gameplay.Communication;
 
-namespace FinalSpace.Core.Parsing.Commands
+namespace FinalSpace.Core.Parsing.Commands.Communication
 {
-    class Echo : CommandBase
+    class Read : CommandBase
     {
         public override void Execute(GameState stateBase, string[] arguments)
         {
-            string s = "";
-            for (int i = 1; i < arguments.Length; i++)
+            string msg = "";
+            foreach (string s in Conversation.dictionary.Keys)
             {
-                s += arguments[i] + " ";
+                msg += s + ", ";
 
             }
 
-            stateBase.PushString(s);
+            stateBase.PushString(msg);
 
         }
 
         public override int GetArguments()
         {
             return 1;
-
         }
 
         public override string GetKey()
         {
-            return "ECHO";
-
+            return "READDICTIONARY";
         }
 
         public override string HelpMessage()
         {
-            return "Usage: ECHO <MESSAGE>\nPrints <MESSAGE> to buffer";
+            return "Usage: READDICTIONARY\nRead the entire Dictionary list.";
+
         }
     }
 }

@@ -11,6 +11,19 @@ namespace FinalSpace.Core.Parsing.Commands.Communication
     {
         public override void Execute(GameState stateBase, string[] arguments)
         {
+            if (stateBase.GetPlayer().IsCommunicating())
+            {
+                stateBase.PushString("Closing communications line with " + stateBase.GetPlayer().GetCurrentPlanet().GetName());
+                stateBase.GetPlayer().SetCommunicating(false);
+
+            } else
+            {
+                stateBase.PushString("Opening communications line with " + stateBase.GetPlayer().GetCurrentPlanet().GetName());
+                stateBase.GetPlayer().SetCommunicating(true);
+                if (!stateBase.GetPlayer().DiscoveredPlanet(stateBase.GetPlayer().GetCurrentPlanet()))
+                    stateBase.PushString(stateBase.GetPlayer().GetCurrentPlanet().GetGreetings(stateBase));
+
+            }
         }
 
         public override int GetArguments()

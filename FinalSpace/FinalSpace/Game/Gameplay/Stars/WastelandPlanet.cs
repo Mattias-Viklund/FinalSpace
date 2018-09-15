@@ -1,5 +1,4 @@
-﻿using FinalSpace.Game.Gameplay.GameplayBases;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,10 +13,20 @@ namespace FinalSpace.Game.Gameplay.Stars
     class WastelandPlanet : Planet
     {
         public WastelandPlanet(Texture texture, float size, Vector2f globalPosition)
-            : base(new Texture(), 50, )
+            : base(texture, size, globalPosition)
         {
 
 
+        }
+
+        public override string GetGreetings(GameState gameState)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string SendMessage(String message, GameState gameState)
+        {
+            throw new NotImplementedException();
         }
     }
 }

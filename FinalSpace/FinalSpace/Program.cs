@@ -12,6 +12,7 @@ using SFML.System;
 using FinalSpace.Game;
 using FinalSpace.GUI;
 using FinalSpace.Rendering;
+using FinalSpace.Game.Gameplay.Communication;
 
 namespace FinalSpace
 {
@@ -40,6 +41,8 @@ namespace FinalSpace
         static void Main(string[] args)
         {
             //Console.Title = "FINAL SPACE DEBUGGER";
+            Conversation.ReadFromFile(".\\Assets\\Dictionary.txt");
+            
             SetIcon(".\\Assets\\icon.png");
             Setup();
             GameLoop();
@@ -149,6 +152,11 @@ namespace FinalSpace
                 _window.Display();
 
             }
+        }
+
+        public static void PushState(StateBase state)
+        {
+
         }
 
         static void SwapState()

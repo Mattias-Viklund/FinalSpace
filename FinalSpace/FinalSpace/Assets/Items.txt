@@ -1,0 +1,12 @@
+RedSpice {
+	Sellable
+	250
+}
+BlueSpice {
+	Sellable
+	250
+}
+GreenSpice {
+	Sellable
+	250
+}

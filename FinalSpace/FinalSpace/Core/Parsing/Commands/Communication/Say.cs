@@ -13,11 +13,13 @@ namespace FinalSpace.Core.Parsing.Commands.Communication
         {
             if (stateBase.GetPlayer().IsCommunicating())
             {
-                string s = "";
+                string s = stateBase.GetPlayer().GetName()+": ";
+                string message = "";
                 for (int i = 1; i < arguments.Length; i++)
-                    s += arguments[i] + " ";
+                    message += arguments[i] + " ";
 
-                stateBase.GetTextBox().PushString(s);
+                stateBase.PushString(s+message);
+                stateBase.GetPlayer().GetCurrentPlanet().SendMessage(message, stateBase);
 
             } else
             {

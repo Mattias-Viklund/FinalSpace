@@ -1,4 +1,4 @@
-﻿using FinalSpace.Game.Gameplay.GameplayBases;
+﻿using FinalSpace.Game.Gameplay.Items;
 using FinalSpace.Game.Gameplay.Stars;
 using System;
 using System.Collections.Generic;
@@ -13,12 +13,12 @@ namespace FinalSpace.Game.Gameplay
         private Planet currentPlanet;
         private Planet homePlanet;
 
-        public string name;
-        public int money;
+        private string name;
+        private int money;
 
         private bool communicating = false;
 
-        private List<Planet> discoveredPlanets;
+        private List<Planet> discoveredPlanets = new List<Planet>();
 
         public Player(string name, Planet homePlanet)
         {
@@ -26,6 +26,20 @@ namespace FinalSpace.Game.Gameplay
             this.currentPlanet = homePlanet;
             this.name = name;
             this.money = 20000;
+
+        }
+
+        public bool DiscoveredPlanet(Planet planet)
+        {
+            foreach (Planet p in discoveredPlanets)
+            {
+                if (p.GetName() == planet.GetName())
+                    return true;
+
+            }
+
+            discoveredPlanets.Add(planet);
+            return false;
 
         }
 
@@ -41,9 +55,33 @@ namespace FinalSpace.Game.Gameplay
 
         }
 
+        public string GetName()
+        {
+            return name;
+
+        }
+
+        public int GetMoney()
+        {
+            return money;
+
+        }
+
+        public void SetMoney(int money)
+        {
+            this.money = money;
+
+        }
+
         public bool IsCommunicating()
         {
             return communicating;
+
+        }
+
+        public void SetCommunicating(bool b)
+        {
+            communicating = b;
 
         }
     }

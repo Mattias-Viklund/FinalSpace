@@ -11,7 +11,7 @@ namespace FinalSpace.Core.Parsing.Commands
     {
         public override void Execute(GameState stateBase, string[] arguments)
         {
-            stateBase.GetTextBox().PushString("Balance: "+stateBase.GetPlayer().money.ToString());
+            stateBase.GetTextBox().PushString("Balance: "+stateBase.GetPlayer().GetMoney().ToString());
         }
 
         public override int GetArguments()

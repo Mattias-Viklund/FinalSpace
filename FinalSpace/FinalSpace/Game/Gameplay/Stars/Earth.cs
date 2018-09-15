@@ -1,4 +1,4 @@
-﻿using FinalSpace.Game.Gameplay.GameplayBases;
+﻿using FinalSpace.Game.Gameplay.Stars;
 using SFML.Graphics;
 using SFML.System;
 using System;
@@ -15,6 +15,18 @@ namespace FinalSpace.Game.Gameplay.Stars
             : base(texture, size, globalPosition)
         {
             base.SetName("EARTH");
+
+        }
+
+        public override string GetGreetings(GameState gameState)
+        {
+            return gameState.GetPlayer().GetCurrentPlanet().GetName() + ": Glad to see you made it back, " + gameState.GetPlayer().GetName();
+
+        }
+
+        public override string SendMessage(String message, GameState gameState)
+        {
+            return "a";
 
         }
     }

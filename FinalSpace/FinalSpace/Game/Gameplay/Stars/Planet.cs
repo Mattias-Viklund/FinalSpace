@@ -7,7 +7,7 @@ using SFML.Graphics;
 using SFML.System;
 using FinalSpace.Rendering;
 
-namespace FinalSpace.Game.Gameplay.GameplayBases
+namespace FinalSpace.Game.Gameplay.Stars
 {
     abstract class Planet : Drawable
     {
@@ -71,6 +71,9 @@ namespace FinalSpace.Game.Gameplay.GameplayBases
             lines[1] = new Vertex(new Vector2f(linesFromCenter[1].Position.X+31*s.Length, linesFromCenter[1].Position.Y));
 
         }
+
+        public abstract string SendMessage(String message, GameState gameState);
+        public abstract string GetGreetings(GameState gameState);
 
         public float GetSize()
         {
