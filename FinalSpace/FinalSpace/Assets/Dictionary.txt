@@ -1,8 +1,80 @@
-hello 0
-
+// MEET MY GAMES DICTIONARY //
+// IT IS AWFUL, SO YOU CAN EDIT IT YOURSELF //
 // COMMENTS ARE MADE WITH //
+// THERE ARE 11 CATEGORIES YOU CAN USE //
 
-greetings 0
-hi 0
-hey 0
-howdy 0
+//
+IGNORE 0
+GREETINGS 1
+QUESTION 2
+INSULTS 3
+COMPLIMENTS 4
+ITEMS 5
+ACTIONS 6
+JOINER 7
+PERSONAL 8
+NUMBERS 9
+CONFIRMATION 10
+DECLINATION 11
+LOCATION 12
+//
+
+i 8
+need 2
+know 7
+item 5
+location 12
+are 7
+such 7
+thing 5
+things 5
+as 7
+monsters 7
+up 12
+down 12
+left 12
+right 12
+what 7
+whats 7
+hello 1
+greetings 1
+hey 1
+hi 1
+handsome 4
+the 7
+is 7
+on 12
+in 12
+use 6
+banana 5
+apple 5
+penis 5
+ass 7
+and 7
+we 8
+home 12
+house 12
+street 12
+aids 3
+pee 3
+poo 3
+there 12
+where 2
+why 2
+who 2
+me 8
+1 9
+2 9
+3 9
+4 9
+5 9
+6 9
+7 9
+8 9
+9 9
+0 9
+yes 10
+yep 10
+positive 10
+no 11
+negative 11

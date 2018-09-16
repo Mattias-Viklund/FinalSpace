@@ -18,7 +18,7 @@ namespace FinalSpace.Game
         private DrawQueue queue = new DrawQueue(256);
         private RectangleShape background = new RectangleShape((Vector2f)Program._window.Size);
 
-        public override void Init()
+        public override void Init(RenderWindow window)
         {
             background.Texture = new Texture(".\\Assets\\Background.png");
 
@@ -65,6 +65,11 @@ namespace FinalSpace.Game
         }
 
         public override void MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        public override void MouseScrolled(object sender, MouseWheelEventArgs e)
         {
 
         }

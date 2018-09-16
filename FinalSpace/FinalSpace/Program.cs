@@ -13,6 +13,7 @@ using FinalSpace.Game;
 using FinalSpace.GUI;
 using FinalSpace.Rendering;
 using FinalSpace.Game.Gameplay.Communication;
+using FinalSpace.Game.LunarLanderGame;
 
 namespace FinalSpace
 {
@@ -31,6 +32,7 @@ namespace FinalSpace
 
         private static MenuState menuState = new MenuState();
         private static GameState gameState = new GameState();
+        private static LunarLander lunarGame = new LunarLander();
 
         // Initialize the states
         public static StateBase currentState = gameState;
@@ -65,8 +67,15 @@ namespace FinalSpace
             _window.MouseButtonPressed += new EventHandler<MouseButtonEventArgs>(MouseDown);
             _window.MouseButtonReleased += new EventHandler<MouseButtonEventArgs>(MouseUp);
             _window.MouseMoved += new EventHandler<MouseMoveEventArgs>(MouseMoved);
+            _window.MouseWheelMoved += new EventHandler<MouseWheelEventArgs>(MouseScrolled);
 
             //ShowWindow(GetConsoleWindow(), SW_HIDE);
+
+        }
+
+        private static void MouseScrolled(object sender, MouseWheelEventArgs e)
+        {
+            currentState.MouseScrolled(sender, e);
 
         }
 
@@ -96,6 +105,8 @@ namespace FinalSpace
             currentState.KeyDown(sender, e);
         }
 
+
+
         public static void Close(object sender, EventArgs e)
         {
             _window.Close();
@@ -116,7 +127,7 @@ namespace FinalSpace
             Time time = Time.Zero; // Time of current frame
             Time deltaTime = Time.Zero; // Deta time of frame
 
-            currentState.Init();
+            currentState.Init(_window);
 
             while (_window.IsOpen)
             {
@@ -132,6 +143,7 @@ namespace FinalSpace
                 // Dispatch window events and feed them to the current state
                 _window.DispatchEvents();
                 currentState.Update(deltaTime);
+                currentState.Update(deltaTime, _window);
 
                 //Fixed time update
                 while (lag >= timePerUpdate)
@@ -162,7 +174,7 @@ namespace FinalSpace
         static void SwapState()
         {
             currentState = newState;
-            currentState.Init();
+            currentState.Init(_window);
 
         }
     }

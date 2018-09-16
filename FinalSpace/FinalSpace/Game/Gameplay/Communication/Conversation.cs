@@ -12,18 +12,19 @@ namespace FinalSpace.Game.Gameplay.Communication
     {
         public enum Tokens
         {
-            Greetings = 0,
-            Question = 1,
-            Insults = 2,
-            Compliments = 3,
-            Items = 4,
-            Actions = 5,
-            Joiner = 6,
-            Personal = 7,
-            Numbers = 8,
-            Confirmation = 9,
-            Declining = 10,
-            Location = 11
+            Ignore = 0,
+            Greetings = 1,
+            Question = 2,
+            Insults = 3,
+            Compliments = 4,
+            Items = 5,
+            Actions = 6,
+            Joiner = 7,
+            Personal = 8,
+            Numbers = 9,
+            Confirmation = 10,
+            Declining = 11,
+            Location = 12
 
         }
 
@@ -83,7 +84,7 @@ namespace FinalSpace.Game.Gameplay.Communication
                 if (combined[i] == null || combined[i + 1] == null)
                     continue;
 
-                words.Add(combined[i]);
+                words.Add(combined[i].ToUpper());
                 try
                 {
                     tokens.Add(Convert.ToInt32(combined[i + 1]));

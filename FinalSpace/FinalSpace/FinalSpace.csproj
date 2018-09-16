@@ -97,6 +97,8 @@
     <Compile Include="Game\Gameplay\Stars\InhabitablePlanet.cs" />
     <Compile Include="Game\Gameplay\Stars\WastelandPlanet.cs" />
     <Compile Include="Game\GameState.cs" />
+    <Compile Include="Game\LunarLanderGame\Lander.cs" />
+    <Compile Include="Game\LunarLanderGame\LunarLander.cs" />
     <Compile Include="Game\MenuState.cs" />
     <Compile Include="Game\SpaceShip.cs" />
     <Compile Include="Game\StateBase.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="Rendering\DrawQueue.cs" />
     <Compile Include="Rendering\Hexagon.cs" />
     <Compile Include="Util\ImageToArray.cs" />
+    <Compile Include="Util\VectorMaths.cs" />
     <Compile Include="World\WorldGen\Generation.cs" />
     <Compile Include="World\WorldGen\Level.cs" />
     <Compile Include="World\WorldGen\Loading.cs" />

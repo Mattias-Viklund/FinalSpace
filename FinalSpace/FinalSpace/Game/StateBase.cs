@@ -8,6 +8,7 @@ using SFML.System;
 using SFML.Window;
 
 using FinalSpace.Rendering;
+using SFML.Graphics;
 
 namespace FinalSpace.Game
 {
@@ -32,10 +33,11 @@ namespace FinalSpace.Game
         }
 
         // Init
-        public abstract void Init();
+        public abstract void Init(RenderWindow window);
 
         // Core
         public abstract void Update(Time time);
+        public virtual void Update(Time time, RenderWindow window) { }
         public abstract void FixedUpdate(Time time);
         public abstract void Render(ref DrawQueue queueOut);
         public virtual void SendLine(string s) { }
@@ -46,6 +48,7 @@ namespace FinalSpace.Game
         public abstract void KeyDown(object sender, KeyEventArgs e);
         public abstract void MouseMoved(object sender, MouseMoveEventArgs e);
         public abstract void MouseDown(object sender, MouseButtonEventArgs e);
-        
+        public abstract void MouseScrolled(object sender, MouseWheelEventArgs e);
+
     }
 }

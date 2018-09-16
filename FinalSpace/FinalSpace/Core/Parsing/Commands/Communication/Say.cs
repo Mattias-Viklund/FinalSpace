@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FinalSpace.Game;
+using FinalSpace.Game.Gameplay.Communication;
 
 namespace FinalSpace.Core.Parsing.Commands.Communication
 {
@@ -17,6 +18,10 @@ namespace FinalSpace.Core.Parsing.Commands.Communication
                 string message = "";
                 for (int i = 1; i < arguments.Length; i++)
                     message += arguments[i] + " ";
+
+                message = message.Remove(message.Length - 1);
+
+                Sentence.GenerateContext(message);
 
                 stateBase.PushString(s+message);
                 stateBase.GetPlayer().GetCurrentPlanet().SendMessage(message, stateBase);

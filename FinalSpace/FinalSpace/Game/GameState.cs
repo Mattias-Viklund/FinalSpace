@@ -34,7 +34,7 @@ namespace FinalSpace.Game
         private Texture planetTexture = new Texture(".\\Assets\\Planet.png");
         private Vector2f shipOrbitPosition;
 
-        public override void Init()
+        public override void Init(RenderWindow window)
         {
             background.Texture = new Texture(".\\Assets\\Background.png");
             planet = new Earth(planetTexture, 75, new Vector2f(Program._window.Size.X / 2, Program._window.Size.Y / 2));
@@ -142,6 +142,11 @@ namespace FinalSpace.Game
         public override void MouseDown(object sender, MouseButtonEventArgs e)
         {
          
+        }
+
+        public override void MouseScrolled(object sender, MouseWheelEventArgs e)
+        {
+
         }
     }
 }
