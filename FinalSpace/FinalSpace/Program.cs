@@ -14,6 +14,7 @@ using FinalSpace.GUI;
 using FinalSpace.Rendering;
 using FinalSpace.Game.Gameplay.Communication;
 using FinalSpace.Game.LunarLanderGame;
+using FinalSpace.Game.CubeGame;
 
 namespace FinalSpace
 {
@@ -31,12 +32,13 @@ namespace FinalSpace
         const uint TPS = 20;
 
         private static MenuState menuState = new MenuState();
-        private static GameState gameState = new GameState();
-        private static LunarLander lunarGame = new LunarLander();
+       // private static GameState gameState = new GameState();
+       // private static LunarLander lunarGame = new LunarLander();
+        private static CubeState cubeState = new CubeState();
 
         // Initialize the states
-        public static StateBase currentState = gameState;
-        public static StateBase newState = gameState;
+        public static StateBase currentState = menuState;
+        public static StateBase newState = cubeState;
 
         static DrawQueue drawQueue = new DrawQueue(256);
 
