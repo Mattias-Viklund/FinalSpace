@@ -63,6 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\CameraView.cs" />
+    <Compile Include="Core\Maths\Matrix4f.cs" />
+    <Compile Include="Core\Maths\Vector4f.cs" />
     <Compile Include="Core\Parsing\CommandBase.cs" />
     <Compile Include="Core\Parsing\Commands\Communication\Read.cs" />
     <Compile Include="Core\Parsing\Commands\Communication\Alliance.cs" />
@@ -79,7 +81,13 @@
     <Compile Include="Core\Parsing\Commands\Help.cs" />
     <Compile Include="Core\Parsing\Commands\Clear.cs" />
     <Compile Include="Core\Parsing\Parser.cs" />
+<<<<<<< HEAD
     <Compile Include="Core\Parsing\ServerCommands\Error.cs" />
+=======
+    <Compile Include="Game\CubeGame\Cube.cs" />
+    <Compile Include="Game\CubeGame\CubeState.cs" />
+    <Compile Include="Game\CubeGame\Vector3f.cs" />
+>>>>>>> d79595f195531f7478d6e12e7289596a677b2c8a
     <Compile Include="Game\Gameplay\Characters\Leader.cs" />
     <Compile Include="Game\Gameplay\Communication\Context.cs" />
     <Compile Include="Game\Gameplay\Communication\Conversation.cs" />
