@@ -10,33 +10,42 @@ namespace FinalSpace.Core.Parsing
 {
     class Parser
     {
-        public static List<CommandBase> commands;
-
         private GameState gameState;
 
         public Parser(GameState gameState)
         {
             CommandBase.InitializeList();
 
-            commands = CommandBase.GetCommands();
             this.gameState = gameState;
 
         }
 
-        public static CommandBase TryFindCommand(string key)
+        public static CommandBase TryFindCommand(string key, bool server = false)
         {
-            foreach (CommandBase b in commands)
+            if (!server)
             {
-                if (b.GetKey() == key)
-                    return b;
+                foreach (CommandBase b in CommandBase.GetClientCommands())
+                {
+                    if (b.GetKey() == key)
+                        return b;
 
+                }
+            }
+            else
+            {
+                foreach (CommandBase b in CommandBase.GetServerCommands())
+                {
+                    if (b.GetKey() == key)
+                        return b;
+
+                }
             }
 
             return null;
 
         }
 
-        public bool Parse(string input)
+        public bool Parse(string input, bool server=false)
         {
             string[] words = input.Split(' ');
             if (words.Length == 0)
@@ -46,11 +55,23 @@ namespace FinalSpace.Core.Parsing
             CommandBase matchingCommand = CommandBase.ERROR;
             Error.error = words[0];
 
-            foreach (CommandBase command in commands)
+            if (!server)
             {
-                if (command.GetKey() == words[0])
-                    matchingCommand = command;
+                foreach (CommandBase command in CommandBase.GetClientCommands())
+                {
+                    if (command.GetKey() == words[0])
+                        matchingCommand = command;
 
+                }
+            }
+            else
+            {
+                foreach (CommandBase command in CommandBase.GetServerCommands())
+                {
+                    if (command.GetKey() == words[0])
+                        matchingCommand = command;
+
+                }
             }
 
             //if (arguments != matchingCommand.GetArguments())

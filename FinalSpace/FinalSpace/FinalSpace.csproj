@@ -79,7 +79,9 @@
     <Compile Include="Core\Parsing\Commands\Help.cs" />
     <Compile Include="Core\Parsing\Commands\Clear.cs" />
     <Compile Include="Core\Parsing\Parser.cs" />
+    <Compile Include="Core\Parsing\ServerCommands\Error.cs" />
     <Compile Include="Game\Gameplay\Characters\Leader.cs" />
+    <Compile Include="Game\Gameplay\Communication\Context.cs" />
     <Compile Include="Game\Gameplay\Communication\Conversation.cs" />
     <Compile Include="Game\Gameplay\Communication\Sentence.cs" />
     <Compile Include="Game\Gameplay\Inventory.cs" />

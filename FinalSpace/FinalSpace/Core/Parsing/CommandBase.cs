@@ -11,7 +11,8 @@ namespace FinalSpace.Core.Parsing
 {
     abstract class CommandBase
     {
-        private static List<CommandBase> commands = new List<CommandBase>();
+        private static List<CommandBase> clientCommands = new List<CommandBase>();
+        private static List<CommandBase> serverCommands = new List<CommandBase>();
         public static CommandBase ERROR = new Error();
 
         public static void InitializeList()
@@ -30,16 +31,26 @@ namespace FinalSpace.Core.Parsing
             }
         }
 
-        public static List<CommandBase> GetCommands()
+        public static List<CommandBase> GetClientCommands()
         {
-            return commands;
+            return clientCommands;
 
         }
 
-        public CommandBase(bool macro=true)
+        public static List<CommandBase> GetServerCommands()
+        {
+            return serverCommands;
+
+        }
+
+        public CommandBase(bool macro = true, bool server = false)
         {
             if (macro)
-                commands.Add(this);
+                if (!server)
+                    clientCommands.Add(this);
+                else
+                    serverCommands.Add(this);
+                    
 
         }
 
